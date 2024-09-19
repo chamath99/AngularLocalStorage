@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {MenuService} from "../../../service/menu.service";
 import {UserAuthService} from "../../../service/user-auth.service";
 import {Router} from "@angular/router";
+import {UserService} from "../../../service/user.service";
 
 @Component({
   selector: 'app-header',
@@ -12,7 +13,8 @@ export class HeaderComponent {
 
   constructor(private menuService: MenuService,
               private userAuthService:UserAuthService,
-              private router:Router) {
+              private router:Router,
+              public userService:UserService) {
   }
   toggleMenu() {
     this.menuService.toggle();
